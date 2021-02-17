@@ -20,9 +20,19 @@ const eventObj3 = new Event('Jenny Lewis', 'On the line tour 2019');
 const eventArray = new Array();
 
 // 7. pushing single object to an array
-eventArray.push(eventObj1);
+// eventArray.push(eventObj1);
 // pushing multiple objects to an array at once
 eventArray.push(eventObj1, eventObj2, eventObj3);
 
 // 8. in order to check whether the elements are pushed, use console.log
 console.log(eventArray);
+
+// 9. jQuery to iterate through array
+$(document).ready(function () {
+    let html = '';
+    $.each(eventArray, function (index, item) {
+      html += `<li>${item.name} - ${item.description}</li>`;
+    });
+    // insert final html into #event...
+    $('#event').html(html);
+  });
